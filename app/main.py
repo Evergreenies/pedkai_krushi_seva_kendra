@@ -19,7 +19,10 @@ class PedkaiKrushiSevaKendra(tb.Frame):
         self.master = master
         self.pack(fill=BOTH, expand=YES)
 
-        LoginWindow(self).show()
+        login = LoginWindow(self)
+        login.show()
+        if login.is_logged_in():
+            pass
 
 
 if __name__ == "__main__":

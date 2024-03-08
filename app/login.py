@@ -5,6 +5,7 @@ import ttkbootstrap as tb
 class LoginWindow:
     def __init__(self, master) -> None:
         self.master = master
+        self.is_logged = False
 
     def show(self):
         left_frame = tb.Frame(self.master, bootstyle="dark", border=True, borderwidth=5)
@@ -47,7 +48,11 @@ class LoginWindow:
 
     def handle_login(self, username: str, password: str) -> None:
         print(f"{username=}:{password=}")
+        self.is_logged = True
 
     def close_window(self) -> None:
         self.master.destroy()
         self.master.master.destroy()
+
+    def is_logged_in(self) -> bool:
+        return is_logged
